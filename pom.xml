@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>com.cdk.dms.starter</groupId>
+    <artifactId>dms-parent-starter</artifactId>
+    <version>1.0.1</version>
+    <relativePath/>
+  </parent>
+  <groupId>org.cdk.apiautomation</groupId>
+  <artifactId>APIAutomation</artifactId>
+  <version>1.0-SNAPSHOT</version>
+
+  <properties>
+    <aspectj.version>1.9.2</aspectj.version>
+    <java.version>11</java.version>
+    <dms-auth.version>1.1.92</dms-auth.version>
+    <restassured.version>4.3.3</restassured.version>
+    <testng.version>7.1.0</testng.version>
+    <json-simple.version>1.1.1</json-simple.version>
+    <commons-io.version>2.7</commons-io.version>
+    <allure-testng.version>2.13.2</allure-testng.version>
+    <gson.version>2.8.6</gson.version>
+    <lombok.version>1.18.20</lombok.version>
+    <asserj.core.version>3.16.1</asserj.core.version>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <test.suite>src/test/resources/smoke.xml</test.suite>
+    <dms-setups-common.version>2.1.17</dms-setups-common.version>
+  </properties>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <version>2.22.2</version>
+        <configuration>
+          <forkCount>0</forkCount>
+          <systemPropertyVariables>
+            <allure.results.directory>results/allure-results</allure.results.directory>
+          </systemPropertyVariables>
+          <!-- Suite testng xml file to consider for test execution -->
+          <suiteXmlFiles>
+            <suiteXmlFile>${test.suite}</suiteXmlFile>
+          </suiteXmlFiles>
+          <argLine>
+            -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
+          </argLine>
+          <properties>
+            <property>
+              <name>listener</name>
+              <value>com.epam.reportportal.testng.ReportPortalTestNGListener</value>
+            </property>
+          </properties>
+        </configuration>
+        <dependencies>
+          <dependency>
+            <groupId>org.aspectj</groupId>
+            <artifactId>aspectjweaver</artifactId>
+            <version>${aspectj.version}</version>
+          </dependency>
+        </dependencies>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.8.1</version>
+        <configuration>
+          <source>${java.version}</source>
+          <target>${java.version}</target>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+
+  <dependencies>
+    <dependency>
+      <groupId>com.cdk.dms.setups</groupId>
+      <artifactId>dms-setups-common</artifactId>
+      <version>${dms-setups-common.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>com.cdk.dms.starter</groupId>
+      <artifactId>dms-auth</artifactId>
+      <version>${dms-auth.version}</version>
+    </dependency>
+    <dependency>
+      <artifactId>rest-assured</artifactId>
+      <groupId>io.rest-assured</groupId>
+      <scope>test</scope>
+      <version>${restassured.version}</version>
+    </dependency>
+
+    <dependency>
+      <artifactId>testng</artifactId>
+      <groupId>org.testng</groupId>
+      <scope>test</scope>
+      <version>${testng.version}</version>
+    </dependency>
+
+    <dependency>
+      <artifactId>json-simple</artifactId>
+      <groupId>com.googlecode.json-simple</groupId>
+      <version>${json-simple.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>commons-io</groupId>
+      <artifactId>commons-io</artifactId>
+      <version>${commons-io.version}</version>
+    </dependency>
+
+    <dependency>
+      <artifactId>allure-testng</artifactId>
+      <groupId>io.qameta.allure</groupId>
+      <version>${allure-testng.version}</version>
+    </dependency>
+
+    <dependency>
+      <artifactId>gson</artifactId>
+      <groupId>com.google.code.gson</groupId>
+      <version>${gson.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.projectlombok</groupId>
+      <artifactId>lombok</artifactId>
+      <version>${lombok.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.assertj</groupId>
+      <artifactId>assertj-core</artifactId>
+      <version>${asserj.core.version}</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-test</artifactId>
+      <version>2.5.2</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>cdk.engqa.reportportal</groupId>
+      <artifactId>agent-java-testNG</artifactId>
+      <version>1.31.2</version>
+    </dependency>
+  </dependencies>
+
+  <repositories>
+    <repository>
+      <id>github</id>
+      <name> Github cdk-prod Apache Maven Packages</name>
+      <url>https://maven.pkg.github.com/cdk-prod/dms-setups-common</url>
+    </repository>
+    <repository>
+      <id>CDK</id>
+      <name>CDK-Artifactory-releases</name>
+      <url>https://artifactory.cdk.com/artifactory/ENG-QA</url>
+    </repository>
+    <repository>
+      <id>cdk-staging</id>
+      <name>CDK-Artifactory-staging</name>
+      <url>https://artifactory.cdk.com/artifactory/cdk-staging</url>
+    </repository>
+    <repository>
+      <id>central</id>
+      <name>Maven Central</name>
+      <url>https://repo1.maven.org/maven2/</url>
+    </repository>
+  </repositories>
+</project>
+ 

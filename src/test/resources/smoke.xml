@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="Smoke-API-TestSuite" verbose="1">
+  <test name="Smoke-API-TestCases">
+    <classes>
+      <class name="com.cdk.dms.tests.smoke.CommonSmokeTest"/>
+<!--      <class name="com.cdk.dms.tests.smoke.TimeZonesMasterSmokeTest"/>-->
+    </classes>
+  </test>
+</suite>
+
