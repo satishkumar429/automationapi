@@ -12,7 +12,7 @@ import org.springframework.test.context.testng.AbstractTestNGSpringContextTests;
 @SpringBootTest
 
 public class Settings extends AbstractTestNGSpringContextTests {
-
+public static void manin();
 
   @Value("${base.readService.path}")
   private String baseReadServicePat;
