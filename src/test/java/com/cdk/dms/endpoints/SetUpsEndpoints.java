@@ -5,7 +5,7 @@ public class SetUpsEndpoints {
 
   public static String createSetupsURL(String functionalUnit) {
     return functionalUnit;
-  }
+
 
   public static String genericReadSetups(String functionalUnit) {
     return functionalUnit;
@@ -26,5 +26,4 @@ public class SetUpsEndpoints {
   public static String deleteAllSetupsTestData(String functionalUnit) {
     return functionalUnit;
   }
-
 }

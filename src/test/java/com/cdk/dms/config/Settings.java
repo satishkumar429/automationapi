@@ -15,9 +15,9 @@ public class Settings extends AbstractTestNGSpringContextTests {
 
 
   @Value("${base.readService.path}")
-  private String baseReadServicePath;
+  private String baseReadServicePat;
 
-  @Value("${base.cudService.path}")
+  @value("${base.cudService.path}")
   private String baseCUDServicePath;
 
   @Value("${system-user.refreshToken}")
