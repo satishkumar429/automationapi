@@ -72,4 +72,7 @@ public class Settings extends AbstractTestNGSpringContextTests {
     return enterpriseId;
   }
 
+  public String getBaseReadServicePat() {
+    return baseReadServicePat;
+  }
 }
