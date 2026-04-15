@@ -53,6 +53,7 @@ public class Constants extends BaseSteps {
 
   public static final String DEPARTMENT_ID_MISSING ="{\"message\":\"Department ID is required\",\"data\":null}";
   public static final Set<PartsSetupCode> FUS_Implemented = Set
+
       .of(
 //              PartsSetupCode.DictPartNo,
 //              PartsSetupCode.InventoryBin,
@@ -65,10 +66,11 @@ public class Constants extends BaseSteps {
               PartsSetupCode.PartsPriceCode
 //              PartsSetupCode.ROPriceCode,
 //              PartsSetupCode.PartsFeeCodes,
-//              PartsSetupCode.SOSOptions,
+              PartsSetupCode.SOSOptions,
 //              PartsSetupCode.OrderPads,
 //              PartsSetupCode.CreditMemoOptions,
 //              PartsSetupCode.CreditMemoReasons
 
       );
 }
+
