@@ -114,4 +114,8 @@ public class CommonSmokeTest extends BaseSteps implements ITest {
     return testName.get();
   }
 
+
+  public String getAccessToken() {
+    return accessToken;
+  }
 }
