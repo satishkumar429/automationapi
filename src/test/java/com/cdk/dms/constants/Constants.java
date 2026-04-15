@@ -66,7 +66,7 @@ public class Constants extends BaseSteps {
               PartsSetupCode.PartsPriceCode
 //              PartsSetupCode.ROPriceCode,
 //              PartsSetupCode.PartsFeeCodes,
-              PartsSetupCode.SOSOptions,
+//              PartsSetupCode.SOSOptions,
 //              PartsSetupCode.OrderPads,
 //              PartsSetupCode.CreditMemoOptions,
 //              PartsSetupCode.CreditMemoReasons
