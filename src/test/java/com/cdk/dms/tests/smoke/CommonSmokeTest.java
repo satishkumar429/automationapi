@@ -123,4 +123,9 @@ public class CommonSmokeTest extends BaseSteps implements ITest {
   public Response createDeleteRequest(RequestSpecification requestSpecification, String uriPath) {
     return super.createDeleteRequest(requestSpecification, uriPath);
   }
+
+  @java.lang.Override
+  public String getRefreshToken() {
+    return super.getRefreshToken();
+  }
 }
