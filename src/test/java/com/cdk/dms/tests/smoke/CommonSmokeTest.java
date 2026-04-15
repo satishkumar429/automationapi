@@ -114,8 +114,4 @@ public class CommonSmokeTest extends BaseSteps implements ITest {
     return testName.get();
   }
 
-  @java.lang.Override
-  public String getAuthUrl() {
-    return super.getAuthUrl();
-  }
 }
