@@ -126,5 +126,7 @@ public class CommonSmokeTest extends BaseSteps implements ITest {
 
   @java.lang.Override
   public String getRefreshToken() {
+    return super.getRefreshToken();
+
   }
 }
